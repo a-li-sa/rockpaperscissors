@@ -7,6 +7,7 @@
 </head>
 <body>
   <script>
+    
     alert("Can you beat the computer in a game of rock, paper, scissors? Best out of 10 or the first one to get 5 wins!");
     
     var myScore = 0;
@@ -52,9 +53,11 @@
       alert("No one wins!")
     }
 
-    confirm("Play again?")
+    var playAgain = confirm("Play again?")
     
-    location.reload();
+    if (playAgain) {
+      location.reload();
+    }
 
   </script>
 </body>
