@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    alert("best out of 10");
+    
+    var myScore = 0;
+    var computerScore = 0;
+    
+    for (var i = 0; i < 10; i++) {
+
+      //prompt user to play
+      var myChoice = prompt("rock, paper, or scissors?");
+      myChoice = myChoice.toLowerCase();
+      console.log(myChoice);
+
+      //randomly select a hand for the computer
+      var options = ["rock", "paper", "scissors"];
+      var theirChoice = options[Math.floor(Math.random() * 3)];
+      alert("computer uses " + theirChoice);
+      console.log(theirChoice);
+
+      //if user chooses rock
+      if (myChoice == "rock") {
+        function outcome(theirChoice) {
+          var winner = "";
+            switch (theirChoice) {
+              case "rock":
+                winner = "tie!"
+                break;
+              case "paper":
+                computerScore += 1;
+                winner = "computer wins!"
+                break;
+              case "scissors":
+                myScore += 1;
+                winner = "you win!"
+                break;
+            }
+          console.log(winner);
+          alert(winner);
+          alert("you: " + myScore + " computer: " + computerScore);
+        } 
+        outcome(theirChoice);
+      //if user chooses paper
+      } else if (myChoice == "paper") {
+        function outcome(theirChoice) {
+          var winner = "";
+            switch (theirChoice) {
+              case "rock":
+                myScore += 1;
+                winner = "you win!"
+                break;
+              case "paper":
+                winner = "tie!"
+                break;
+              case "scissors":
+                computerScore += 1;
+                winner = "computer wins!"
+                break;
+            }
+          console.log(winner);
+          alert(winner);
+          alert("you: " + myScore + " computer: " + computerScore);
+        } 
+        outcome(theirChoice);
+      //if user chooses scissors
+      } else if (myChoice == "scissors") {
+        function outcome(theirChoice) {
+          var winner = "";
+            switch (theirChoice) {
+              case "rock":
+                computerScore += 1;
+                winner = "computer wins!"
+                break;
+              case "paper":
+                myScore += 1;
+                winner = "you win!"
+                break;
+              case "scissors":
+                winner = "tie!"
+                break;
+            }
+          console.log(winner);
+          alert(winner);
+          alert("you: " + myScore + " computer: " + computerScore);
+        }
+        outcome(theirChoice)
+      // if user enters anything else besides rock, paper, or scissors
+      } else {
+        console.log("not a valid game");
+        alert("not a valid game");
+      } 
+    }
+
+    alert("final scores");
+    alert("you: " + myScore + " computer: " + computerScore);
+    
+    if (myScore > computerScore) {
+      alert("you win!");
+    } else if (myScore < computerScore) {
+      alert("you lose!");
+    } else {
+      alert("it's a tie!")
+    }
+
+  </script>
+</body>
+</html>
