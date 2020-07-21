@@ -8,21 +8,21 @@
 <body>
   <script>
 
-    alert("Can you beat the computer in a game of rock, paper, scissors? Best out of 10 or the first one to get 5 wins!");
+    alert("Can you beat the computer in a game of rock, paper, scissors?\n\nBest out of 10 or the first to get 5 wins!");
     
-    var myScore = 0;
+    var yourScore = 0;
     var computerScore = 0;
     var ties = 0;
     var round = 0;
 
     for (var i = 0; i < 10; i++) {
 
-      if (myScore == 5 || computerScore == 5) {
+      if (yourScore == 5 || computerScore == 5) {
         break;
       }
 
       round += 1
-      alert("Round: " + round + " | You: " + myScore + " Computer: " + computerScore + " Ties: " + ties);
+      alert("Round " + round + " \n\nYou: " + yourScore + "\nCPU: " + computerScore + "\nTie(s): " + ties);
       var user = prompt("Rock, paper, or scissors?").toLowerCase();
       var options = ["rock", "paper", "scissors"];
       var computer = options[Math.floor(Math.random() * 3)];
@@ -32,23 +32,23 @@
         alert("It's a tie!");
         ties += 1;
       } else if ((user == "scissors" && computer == "rock") || (user == "rock" && computer == "paper") || (user == "paper" && computer == "scissors")) {
-        alert("You lost.")
+        alert("You lose.")
         computerScore += 1;
       } else if ((user == "scissors" && computer == "paper") || (user == "rock" && computer == "scissors") || (user == "paper" && computer == "rock")) {
         alert("You win!")
-        myScore += 1;
+        yourScore += 1;
       } else {
         alert("Not a valid game");
       } 
     }
 
     alert("Final Scores");
-    alert("You: " + myScore + " Computer: " + computerScore + " Ties: " + ties);
+    alert("You: " + yourScore + "\nCPU: " + computerScore + "\nTies: " + ties);
     
-    if (myScore > computerScore) {
-      alert("You won against the computer!");
-    } else if (myScore < computerScore) {
-      alert("You lost against the computer!");
+    if (yourScore > computerScore) {
+      alert("You have won against the computer!");
+    } else if (yourScore < computerScore) {
+      alert("You have lost against the computer!");
     } else {
       alert("No one wins!")
     }
